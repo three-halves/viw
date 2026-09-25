@@ -1,0 +1,24 @@
+[gd_resource type="Resource" script_class="Beat" format=3 uid="uid://bka61q12oosuu"]
+
+[ext_resource type="Texture2D" uid="uid://do8r2ai8r8f3k" path="res://graphics/circle_shot.png" id="1_drx3p"]
+[ext_resource type="Script" uid="uid://3vc8jtcou72a" path="res://scripts/resource_definitions/beat.gd" id="1_tb5js"]
+[ext_resource type="AudioStream" uid="uid://cjaub0elk30lx" path="res://audio/counter.mp3" id="2_n4mi6"]
+[ext_resource type="Script" uid="uid://bn1e704md7iux" path="res://scripts/resource_definitions/bullet_type.gd" id="2_xdb3r"]
+[ext_resource type="Resource" uid="uid://du41yfcwflk1" path="res://resources/bullet/wave_bullet_short.tres" id="3_xdb3r"]
+[ext_resource type="Script" uid="uid://ci1l23adqwl6i" path="res://scripts/resource_definitions/shot_type.gd" id="4_33mtd"]
+[ext_resource type="AudioStream" uid="uid://cbrqowlaihwws" path="res://audio/talk-aqua.wav" id="7_n4mi6"]
+
+[sub_resource type="Resource" id="Resource_q1m25"]
+script = ExtResource("4_33mtd")
+sfx = ExtResource("7_n4mi6")
+bullets = Array[ExtResource("2_xdb3r")]([ExtResource("3_xdb3r"), ExtResource("3_xdb3r"), ExtResource("3_xdb3r"), ExtResource("3_xdb3r"), ExtResource("3_xdb3r"), ExtResource("3_xdb3r"), ExtResource("3_xdb3r"), ExtResource("3_xdb3r")])
+angle_offsets = Array[float]([0.0, 45.0, 90.0, 135.0, 180.0, 225.0, 270.0, 315.0])
+base_damages = Array[float]([1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0])
+metadata/_custom_type_script = "uid://ci1l23adqwl6i"
+
+[resource]
+script = ExtResource("1_tb5js")
+shot_type = SubResource("Resource_q1m25")
+icon = ExtResource("1_drx3p")
+pickup_sfx = ExtResource("2_n4mi6")
+metadata/_custom_type_script = "uid://3vc8jtcou72a"

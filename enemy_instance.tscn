@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://b0oq6uyubx31n"]
+
+[ext_resource type="Script" uid="uid://donfa8kjs7ntw" path="res://enemy_instance.gd" id="1_he27n"]
+[ext_resource type="Script" uid="uid://digf5v38iutwp" path="res://polygon_outline.gd" id="2_60nfk"]
+[ext_resource type="PackedScene" uid="uid://dhi6xkf8xyrng" path="res://resources/enemy_bullet_instance.tscn" id="2_kouni"]
+[ext_resource type="AudioStream" uid="uid://dtfarkpv0fm52" path="res://audio/OLD_step0.mp3" id="4_kouni"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_2u3nc"]
+friction = 0.0
+bounce = 4.0
+
+[node name="EnemyInstance" type="StaticBody2D" unique_id=509236403 node_paths=PackedStringArray("collision_polygon", "visual_polygon")]
+collision_layer = 128
+collision_mask = 5
+physics_material_override = SubResource("PhysicsMaterial_2u3nc")
+script = ExtResource("1_he27n")
+collision_polygon = NodePath("CollisionPolygon2D")
+visual_polygon = NodePath("Polygon2D")
+bullet_instance = ExtResource("2_kouni")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=1079803809]
+rotation = 1.5707964
+polygon = PackedVector2Array(0, 0, 1, 0, 1, 1)
+
+[node name="Polygon2D" type="Polygon2D" parent="." unique_id=655140205]
+rotation = 1.5707964
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(0, 0, 32, 0, 32, 32)
+script = ExtResource("2_60nfk")
+outline_color = Color(1, 0, 0.14901961, 1)
+outline_width = 4.0
+warble_amplitude = 6.0
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1588959223]
+stream = ExtResource("4_kouni")
+volume_db = -6.0

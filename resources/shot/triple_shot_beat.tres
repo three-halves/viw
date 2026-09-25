@@ -1,0 +1,24 @@
+[gd_resource type="Resource" script_class="Beat" format=3 uid="uid://b0ftv0qnckgcr"]
+
+[ext_resource type="Texture2D" uid="uid://c5l8ikygug78o" path="res://graphics/triple_shot.png" id="1_pdpj8"]
+[ext_resource type="Script" uid="uid://3vc8jtcou72a" path="res://scripts/resource_definitions/beat.gd" id="1_uledp"]
+[ext_resource type="Script" uid="uid://bn1e704md7iux" path="res://scripts/resource_definitions/bullet_type.gd" id="2_3g5ie"]
+[ext_resource type="AudioStream" uid="uid://cjaub0elk30lx" path="res://audio/counter.mp3" id="2_kt88q"]
+[ext_resource type="Resource" uid="uid://d0mgm5bldlwai" path="res://resources/bullet/small_bullet.tres" id="3_pdpj8"]
+[ext_resource type="Script" uid="uid://ci1l23adqwl6i" path="res://scripts/resource_definitions/shot_type.gd" id="4_t5fjy"]
+[ext_resource type="AudioStream" uid="uid://gd3p16xk1bef" path="res://audio/talk-pyro.wav" id="6_t5fjy"]
+
+[sub_resource type="Resource" id="Resource_xo58k"]
+script = ExtResource("4_t5fjy")
+sfx = ExtResource("6_t5fjy")
+bullets = Array[ExtResource("2_3g5ie")]([ExtResource("3_pdpj8"), ExtResource("3_pdpj8"), ExtResource("3_pdpj8")])
+angle_offsets = Array[float]([0.0, -15.0, 15.0])
+base_damages = Array[float]([2.0, 2.0, 2.0])
+metadata/_custom_type_script = "uid://ci1l23adqwl6i"
+
+[resource]
+script = ExtResource("1_uledp")
+shot_type = SubResource("Resource_xo58k")
+icon = ExtResource("1_pdpj8")
+pickup_sfx = ExtResource("2_kt88q")
+metadata/_custom_type_script = "uid://3vc8jtcou72a"

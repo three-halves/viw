@@ -1,0 +1,173 @@
+[gd_scene format=3 uid="uid://d3oy1tgwy13sc"]
+
+[ext_resource type="Texture2D" uid="uid://cvraoxsvxsvl5" path="res://graphics/bgtile_alt.png" id="1_ak2if"]
+[ext_resource type="Script" uid="uid://b35tfkjscetig" path="res://title_screen.gd" id="1_hafda"]
+[ext_resource type="Texture2D" uid="uid://dnqpmbi81inbs" path="res://graphics/bg2.png" id="2_ig5kc"]
+[ext_resource type="Texture2D" uid="uid://bxmt3uytx513u" path="res://graphics/logo.png" id="3_ig5kc"]
+[ext_resource type="Theme" uid="uid://3s53qvqdudrc" path="res://game_theme.tres" id="4_05l2w"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hafda"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.74509805, 0.74509805, 0.74509805, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 8
+border_width_bottom = 8
+border_color = Color(0.49411765, 0.49411765, 0.49411765, 1)
+corner_detail = 10
+expand_margin_left = 12.0
+expand_margin_top = 12.0
+expand_margin_right = 18.0
+expand_margin_bottom = 18.0
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tpml5"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.49411765, 0.49411765, 0.49411765, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 8
+border_width_bottom = 8
+border_color = Color(0.49411765, 0.49411765, 0.49411765, 1)
+corner_detail = 10
+expand_margin_left = 12.0
+expand_margin_top = 12.0
+expand_margin_right = 18.0
+expand_margin_bottom = 18.0
+anti_aliasing = false
+
+[sub_resource type="LabelSettings" id="LabelSettings_2re5j"]
+font_size = 24
+
+[node name="TitleScreen" type="Control" unique_id=1943452112]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_hafda")
+
+[node name="bg" type="Node2D" parent="." unique_id=1008472666]
+z_index = -10
+
+[node name="Parallax2D" type="Parallax2D" parent="bg" unique_id=1845529105]
+self_modulate = Color(1, 1, 1, 0.2509804)
+z_index = -2
+scroll_scale = Vector2(0.88, 0.88)
+scroll_offset = Vector2(0, -1)
+repeat_size = Vector2(1024, 1024)
+autoscroll = Vector2(-30, -15)
+repeat_times = 6
+
+[node name="Sprite2D" type="Sprite2D" parent="bg/Parallax2D" unique_id=909149793]
+z_index = 1
+texture_filter = 1
+scale = Vector2(2, 2)
+texture = ExtResource("1_ak2if")
+
+[node name="Parallax2D2" type="Parallax2D" parent="bg" unique_id=572453397]
+self_modulate = Color(1, 1, 1, 0.2509804)
+z_index = -2
+scroll_scale = Vector2(0.7, 0.7)
+scroll_offset = Vector2(0, -1)
+repeat_size = Vector2(1024, 1024)
+autoscroll = Vector2(-75, 30)
+repeat_times = 6
+
+[node name="Sprite2D" type="Sprite2D" parent="bg/Parallax2D2" unique_id=510342506]
+texture_filter = 1
+scale = Vector2(2, 2)
+texture = ExtResource("2_ig5kc")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=952106532]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -268.0
+offset_top = -267.0
+offset_right = 268.0
+offset_bottom = -159.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_ig5kc")
+
+[node name="Button2" type="Button" parent="." unique_id=777495833]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -167.5
+offset_top = -78.67499
+offset_right = -32.5
+offset_bottom = -37.674988
+grow_horizontal = 2
+grow_vertical = 0
+theme = ExtResource("4_05l2w")
+theme_type_variation = &"FlatButton"
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxFlat_hafda")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_tpml5")
+theme_override_styles/hover = SubResource("StyleBoxFlat_hafda")
+text = "      Play      "
+
+[node name="ExitButton" type="Button" parent="." unique_id=2093242875]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 32.5
+offset_top = -78.67499
+offset_right = 167.5
+offset_bottom = -37.674988
+grow_horizontal = 2
+grow_vertical = 0
+theme = ExtResource("4_05l2w")
+theme_type_variation = &"FlatButton"
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxFlat_hafda")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_tpml5")
+theme_override_styles/hover = SubResource("StyleBoxFlat_hafda")
+text = "      Exit      "
+
+[node name="Label" type="Label" parent="." unique_id=224377878]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -336.0
+offset_top = -127.0
+offset_right = 373.0
+offset_bottom = 166.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Use WASD to move
+Move the mouse to aim
+
+Weapons are fired at 160 BPM.
+You have 4 weapon slots that will rotate being fired.
+Defeat enemies and pick up weapons to swap them out.
+Pick up the same weapon style in the same slot to upgrade it.
+Survive as long as possible!"
+label_settings = SubResource("LabelSettings_2re5j")
+
+[connection signal="pressed" from="Button2" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="ExitButton" to="." method="_on_exit_button_pressed"]
