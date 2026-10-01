@@ -4,12 +4,12 @@ extends CharacterBody2D
 @export var speed: float
 @export var fric: float
 @export var wave_handler: WaveHandler
-@export var bullet_instance = preload("res://resources/bullet_instance.tscn")
+@export var bullet_instance = preload("res://scenes/bullet_instance.tscn")
 @export var health_bar: TextureProgressBar
 @export var audio: AudioStreamPlayer2D
 @export var sfx: Dictionary[String, AudioStream] = {
-	"hurt": preload("res://audio/Ouch.wav"),
-	"lose": preload("res://audio/Lose.wav")
+	"hurt": preload("res://content/base/audio/Ouch.wav"),
+	"lose": preload("res://content/base/audio/Lose.wav")
 }
 
 var itime: float = 0.0

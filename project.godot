@@ -13,11 +13,12 @@ config_version=5
 config/name="viw"
 run/main_scene="uid://d3oy1tgwy13sc"
 config/features=PackedStringArray("4.7", "GL Compatibility")
-config/icon="uid://cqyfbqxfg6wlu"
+config/icon="uid://bxmt3uytx513u"
 
 [autoload]
 
 GameSettings="*uid://bsvyk17hpxl12"
+ContentRegistry="*uid://f7brdab7harc"
 
 [display]
 
